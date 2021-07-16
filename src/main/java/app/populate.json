@@ -1,0 +1,874 @@
+[
+  {
+    "_class": "app.entity.Application",
+    "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8",
+    "name": "io.cronapp.apps.jjmj"
+  },
+  {
+    "_class": "app.entity.User",
+    "id": "1d4e5d7b-dca8-4a1d-90fd-72648cf5dc8d",
+    "name": "Administrator",
+    "userName": "admin",
+    "normalizedUserName": "admin",
+    "email": "admin@cronapp.io",
+    "normalizedEmail": "admin@cronapp.io",
+    "emailConfirmed": true,
+    "password": "$2a$10$LjzpM1Q3VoAtG2dTCCabNuW0/amVPjL3Iyvyi2Dj7NP.HngtzSewu",
+    "securityStamp": "972d8d0d-66b7-4638-8fdc-74845fba68a5",
+    "phoneNumberConfirmed": true,
+    "twoFactorEnabled": true,
+    "lockoutEnabled": false,
+    "accessFailedCount": 0
+  },
+  {
+    "_class": "app.entity.Role",
+    "id": "cdeca4d5-59a5-11eb-95ba-0242ac110002",
+    "name": "Administrators",
+    "normalizedName": "administrators",
+    "membershipEnabled": true,
+    "builtIn": true
+  },
+  {
+    "id": "778992e4-979e-45c1-89c8-b0b3789887dd",
+    "name": "Anonymous Users",
+    "normalizedName": "anonymous users",
+    "membershipEnabled": false,
+    "builtIn": false,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.Role"
+  },
+  {
+    "_class": "app.entity.Role",
+    "id": "cca8cdcf-3ca1-4b07-9396-a6dfa470b412",
+    "name": "Authenticated Users",
+    "normalizedName": "authenticated users",
+    "membershipEnabled": false,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "builtIn": true
+  },
+  {
+    "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029",
+    "name": "Public",
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.Securable"
+  },
+  {
+    "id": "ced96aa7-4160-4020-b0fa-8fa1ad52557f",
+    "name": "Authenticated",
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.Securable"
+  },
+  {
+    "id": "fdce3bb0-59a5-11eb-95ba-0242ac110002",
+    "name": "Administrators",
+    "_class": "app.entity.Securable"
+  },
+  {
+    "_class": "app.entity.RoleSecurable",
+    "id": "d59cbad3-7f39-4e21-a1bc-92c57863b3c1",
+    "role": {
+      "id": "778992e4-979e-45c1-89c8-b0b3789887dd"
+    },
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    }
+  },
+  {
+    "_class": "app.entity.RoleSecurable",
+    "id": "8f6447e9-1679-4872-bf98-e12c5d35af32",
+    "role": {
+      "id": "cca8cdcf-3ca1-4b07-9396-a6dfa470b412"
+    },
+    "securable": {
+      "id": "ced96aa7-4160-4020-b0fa-8fa1ad52557f"
+    }
+  },
+  {
+    "id": "def2d8a0-5a5c-11eb-bdc9-0242ac110002",
+    "role": {
+      "id": "cdeca4d5-59a5-11eb-95ba-0242ac110002"
+    },
+    "securable": {
+      "id": "fdce3bb0-59a5-11eb-95ba-0242ac110002"
+    },
+    "_class": "app.entity.RoleSecurable"
+  },
+  {
+    "id": "b1658198-4c99-452e-b6b6-516268505b2d",
+    "securable": {
+      "id": "fdce3bb0-59a5-11eb-95ba-0242ac110002"
+    },
+    "pattern": "/views/admin/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "9f9ef9b8-60e8-46cf-b118-ec7bcfe4cafa",
+    "securable": {
+      "id": "fdce3bb0-59a5-11eb-95ba-0242ac110002"
+    },
+    "pattern": "/api/security/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "5b921f3c-928e-48f5-a4fd-9eb4dc30bd01",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/auth/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "1e8dd867-d26c-48b9-8d84-39e510b5d819",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/index.html",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "99e2f14b-41ba-416c-b9e9-19a24191795d",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/favicon.ico",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "b21855be-b7f8-40d1-ba7c-b0c7cdbc14d4",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/public/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "def3421a-1b61-4cd6-94c7-152f87071dfb",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/plugins/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "90cbbd9b-98ca-41b5-acd9-f412ac57ee03",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/node_modules/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "18784c2f-c259-42dd-ba97-725787e9ec52",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/components/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "16ed9479-4ca2-4b63-8cc5-0c24b8be1856",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/js/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "9bbacdd5-3dcd-4cd1-bc65-efcc65305416",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/lib/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "091b422a-c1c0-422f-9b60-e69598f51a35",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/css/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "a43e7a5a-9794-4b16-8c52-652c0a5d5190",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/img/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "08c04218-b237-458b-a0d6-c6b9cefbe7e4",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/i18n/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "ef10c4fe-21f6-4851-8896-35fb8f6abe11",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/views/login.view.html",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "663c9192-668c-4e1f-a264-7390dc518555",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/views/error/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "8d764372-2878-41db-8234-862e68bb4e9a",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/views/public/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "171ab5d9-2358-40ae-9bd5-6a59a6628bb2",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/signin/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "614f12cb-901c-4018-8575-45bb9a5f81c5",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/device/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "950e82a5-0de6-4837-9480-b44f9bc16573",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/api/cronapi/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "86446b78-6194-44df-ab7b-93a252473061",
+    "securable": {
+      "id": "ced96aa7-4160-4020-b0fa-8fa1ad52557f"
+    },
+    "pattern": "/views/logged/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "d3aec5bb-0acb-4e74-8e6e-fd0b97b367f6",
+    "securable": {
+      "id": "ced96aa7-4160-4020-b0fa-8fa1ad52557f"
+    },
+    "pattern": "/api/rest/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "cf5954e1-fcc6-4332-aa5d-33876879fc6d",
+    "securable": {
+      "id": "ced96aa7-4160-4020-b0fa-8fa1ad52557f"
+    },
+    "pattern": "/changePassword",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "c9dc1647-4799-4c39-9730-111abe412ad4",
+    "securable": {
+      "id": "ced96aa7-4160-4020-b0fa-8fa1ad52557f"
+    },
+    "pattern": "/changeTheme",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "4a213fad-a7ae-459a-95d0-fd703df1ee80",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/services/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "9a8213e3-5c3c-469d-85d6-ab620ef5742b",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mutual/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "a046a645-f464-4f57-b96e-3ce3946da17a",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/actuator/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "ba33e027-21dd-4fc1-ba93-6245e5b1ce52",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/index.html",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "f24a6783-38d1-46c2-a3de-22d5bf9dfe31",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/views/login.view.html",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "3208e2d8-4e02-4f2d-93ca-0d06d25411b1",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/js/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "666a587e-5f0c-430a-99cb-612c1e31383e",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/node_modules/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "9bed2dac-4581-4a49-94ca-4a30810c9d47",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/css/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "6d95185a-bc01-4b73-9580-3ac982e5a333",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/i18n/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "d5514d9e-b71a-4d06-b9bc-3130a6e34ee0",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/img/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "edddef78-32fa-4408-b4a9-5cb52a9620e4",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/views/error/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "bfd67eb2-89ea-4c11-8b58-fbdaf820b96c",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/favicon.ico",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "ec913fa9-705e-44a1-a810-63b5ec4fc1b2",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/views/public/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "622d1b13-f08f-473c-be01-b98f4e6f6ba0",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/bowerscripts/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "b40eaa00-7ec3-479c-8449-5a5e4eebbc40",
+    "securable": {
+      "id": "b69e1bf9-ad05-407d-95ad-a5b9efc9f029"
+    },
+    "pattern": "/mobileapp/manifest.json",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "id": "6b0bf846-b7fb-42dd-8375-4f65c4149c34",
+    "securable": {
+      "id": "ced96aa7-4160-4020-b0fa-8fa1ad52557f"
+    },
+    "pattern": "/mobileapp/views/logged/**",
+    "getMethodAllowed": true,
+    "headMethodAllowed": true,
+    "putMethodAllowed": true,
+    "postMethodAllowed": true,
+    "patchMethodAllowed": true,
+    "deleteMethodAllowed": true,
+    "optionsMethodAllowed": true,
+    "traceMethodAllowed": true,
+    "application": {
+      "id": "057a7537-fb8f-474c-b4f4-214f9147e1c8"
+    },
+    "_class": "app.entity.View"
+  },
+  {
+    "_class": "app.entity.UserRole",
+    "id": "f6dff76e-6460-4abc-b55b-7fef96716d18",
+    "user": {
+      "id": "1d4e5d7b-dca8-4a1d-90fd-72648cf5dc8d"
+    },
+    "role": {
+      "id": "cdeca4d5-59a5-11eb-95ba-0242ac110002"
+    }
+  }
+]
